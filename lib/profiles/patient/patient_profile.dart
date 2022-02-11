@@ -15,7 +15,7 @@ class PatientProfile extends StatelessWidget{
                 Container(
                   width: 200,
                   height: 200,
-                   padding: const EdgeInsets.all(25.0),
+                   padding: const EdgeInsets.all(20.0),
                   child: Card(
                   shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(15.0),
@@ -25,7 +25,7 @@ class PatientProfile extends StatelessWidget{
                 Container(
                     width: 200,
                     height: 200,
-                    padding: EdgeInsets.all(25.0),
+                    padding: const EdgeInsets.all(20.0),
                     child: GestureDetector(child : Card(
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(15.0),
