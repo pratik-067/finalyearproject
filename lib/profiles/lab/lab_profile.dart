@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class doctorProfile extends StatelessWidget{
+class labProfile extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
 
     return  MaterialApp(
       home: Scaffold(
-        appBar: AppBar(title: const Text('Welcome Dr. name')),
+        appBar: AppBar(title: const Text('Pathology Lab')),
         backgroundColor: Colors.grey,
         body: Column(
 
@@ -37,10 +37,10 @@ class doctorProfile extends StatelessWidget{
                         borderRadius: BorderRadius.circular(15.0),
 
                       ),
-                      child:const Center(child: Text('profile')),
+                      child:const Center(child: Text('Lab profile')),
 
                     ),onTap:(){
-                      // Navigator.push(context,MaterialPageRoute(builder: (context) => UploadDocument()));
+                      // Navigator.push(context,MaterialPageRoute(builder: (context) => SearchPage()));
                     } ,)),
               ],
             ),
@@ -54,7 +54,6 @@ class doctorProfile extends StatelessWidget{
 
 }
 
-// Search Page
 class SearchPage extends StatelessWidget {
   const SearchPage({Key? key}) : super(key: key);
 

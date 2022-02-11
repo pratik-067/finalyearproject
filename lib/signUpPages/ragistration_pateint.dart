@@ -46,33 +46,33 @@ class _RegistrationPatientState extends State<RegistrationPatient> {
 
                     ),
                     const SizedBox(height: 25),
-                   Row(
-                       children:[
-                         const Icon(Icons.bloodtype,color: Colors.grey,),
-                         const Text("Blood Group   "),
-                     DropdownButton(
+                    Row(
+                        children:[
+                          const Icon(Icons.bloodtype,color: Colors.grey,),
+                          const Text("Blood Group   "),
+                          DropdownButton(
 
-                     // Initial Value
-                     value: dropdownvalue,
+                            // Initial Value
+                            value: dropdownvalue,
 
-                     // Down Arrow Icon
-                     icon: const Icon(Icons.keyboard_arrow_down),
+                            // Down Arrow Icon
+                            icon: const Icon(Icons.keyboard_arrow_down),
 
-                     // Array list of items
-                     items: items.map((String items) {
-                       return DropdownMenuItem(
-                         value: items,
-                         child: Text(items),
-                       );
-                     }).toList(),
-                     // After selecting the desired option,it will
-                     // change button value to selected value
-                     onChanged: (String? newValue) {
-                       setState(() {
-                         dropdownvalue = newValue!;
-                       });
-                     },
-                   ),]),
+                            // Array list of items
+                            items: items.map((String items) {
+                              return DropdownMenuItem(
+                                value: items,
+                                child: Text(items),
+                              );
+                            }).toList(),
+                            // After selecting the desired option,it will
+                            // change button value to selected value
+                            onChanged: (String? newValue) {
+                              setState(() {
+                                dropdownvalue = newValue!;
+                              });
+                            },
+                          ),]),
                     const SizedBox(height: 15),
                     Column( crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -106,26 +106,23 @@ class _RegistrationPatientState extends State<RegistrationPatient> {
                       decoration: const InputDecoration(
                         icon:  Icon(Icons.location_on),
                         hintText: 'Enter your Aadhar',
-                        labelText: 'Aadhar NO',
+                        labelText: 'Aadhar No',
                       ),
 
                     ),
                     TextFormField(
-                      decoration: const InputDecoration(
-                        icon: Icon(Icons.phone),
-                        hintText: 'Enter a phone number',
-                        labelText: 'Phone',
-                      ),
+                      decoration: const InputDecoration(icon: Icon(Icons.phone),labelText: 'Mobile',hintText: 'Enter Your phone number'),
                       keyboardType: TextInputType.phone,
-
-                      validator: (String? value) {
-                        Pattern pattern =  r'/^(\+\d{1,3}[- ]?)?\d{10}$/' ;
+                      validator:(String? value){
+                        Pattern pattern = r'^(?:[+0]9)?[0-9]{10}$';
                         RegExp regex =  RegExp(pattern.toString());
-                        return (value?.length != 10 && regex.hasMatch(value!)) ? 'Mobile Number must be of 10 digit' : null;
+                        if (!regex.hasMatch(value!)) {
+                          return 'Enter Valid mobile number';
+                        } else {
+                          return null;
+                        }
+
                       },
-                      // inputFormatters: [
-                      //   WhitelistingTextInputFormatter.digitsOnly,
-                      // ],
 
 
                     ),
@@ -198,6 +195,7 @@ void bookFlight(BuildContext context) {
   showDialog(
       context: context,builder: (BuildContext context) => alertDialog);
 }
+
 
 
 // String? validateMobile(String value) {

@@ -59,21 +59,18 @@ class _RegistrationLabState extends State<RegistrationLab> {
 
                     ),
                     TextFormField(
-                      decoration: const InputDecoration(
-                        icon: Icon(Icons.contact_phone),
-                        hintText: 'Enter a Contact number',
-                        labelText: 'Contact No',
-                      ),
+                      decoration: const InputDecoration(icon: Icon(Icons.phone),labelText: 'Mobile',hintText: 'Enter Your phone number'),
                       keyboardType: TextInputType.phone,
-
-                      validator: (String? value) {
-                        Pattern pattern =  r'/^(\+\d{1,3}[- ]?)?\d{10}$/' ;
+                      validator:(String? value){
+                        Pattern pattern = r'^(?:[+0]9)?[0-9]{10}$';
                         RegExp regex =  RegExp(pattern.toString());
-                        return (value?.length != 10 && regex.hasMatch(value!)) ? 'Mobile Number must be of 10 digit' : null;
+                        if (!regex.hasMatch(value!)) {
+                          return 'Enter Valid mobile number';
+                        } else {
+                          return null;
+                        }
+
                       },
-                      // inputFormatters: [
-                      //   WhitelistingTextInputFormatter.digitsOnly,
-                      // ],
 
 
                     ),
