@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 
 
 class RegistrationPatient extends StatefulWidget{
+  const RegistrationPatient({Key? key}) : super(key: key);
+
   @override
   _RegistrationPatientState createState() => _RegistrationPatientState();
 }
@@ -104,7 +106,7 @@ class _RegistrationPatientState extends State<RegistrationPatient> {
                     const SizedBox(height: 25),
                     TextFormField(
                       decoration: const InputDecoration(
-                        icon:  Icon(Icons.location_on),
+                        icon:  Icon(Icons.quick_contacts_mail_outlined),
                         hintText: 'Enter your Aadhar',
                         labelText: 'Aadhar No',
                       ),
@@ -155,9 +157,9 @@ class _RegistrationPatientState extends State<RegistrationPatient> {
                     ),
                     TextFormField(
                       decoration: const InputDecoration(
-                        icon: Icon(Icons.add_location),
-                        hintText: 'Enter your  location',
-                        labelText: 'location',
+                        icon: Icon(Icons.location_on),
+                        hintText: 'Enter your  Address',
+                        labelText: 'Address',
                       ),
 
                     ),
@@ -212,8 +214,9 @@ void bookFlight(BuildContext context) {
 String? validDOB(String value) {
   Pattern pattern = r'^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/([12][0-9]{3})$';
   RegExp regex =  RegExp(pattern.toString());
-  if (!regex.hasMatch(value))
+  if (!regex.hasMatch(value)) {
     return 'Enter DOB in format DD/MM/YYYY';
-  else
+  } else {
     return null;
+  }
 }

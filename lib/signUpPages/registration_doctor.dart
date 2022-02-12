@@ -1,10 +1,11 @@
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
 
 class RegistrationDoctor extends StatefulWidget{
+  const RegistrationDoctor({Key? key}) : super(key: key);
+
   @override
   _RegistrationDoctorState createState() => _RegistrationDoctorState();
 }
@@ -34,7 +35,7 @@ class _RegistrationDoctorState extends State<RegistrationDoctor> {
                   children: <Widget>[
                     TextFormField(
                       decoration: const InputDecoration(
-                        icon: const Icon(Icons.person),
+                        icon: Icon(Icons.person),
                         hintText: 'Enter your first and last name',
                         labelText: 'Name',
                       ),
@@ -50,7 +51,7 @@ class _RegistrationDoctorState extends State<RegistrationDoctor> {
                     ),
                     TextFormField(
                       decoration: const InputDecoration(
-                        icon:  Icon(Icons.confirmation_number),
+                        icon:  Icon(Icons.quick_contacts_mail_outlined),
                         hintText: 'Enter your Aadhar',
                         labelText: 'Aadhar No',
                       ),
@@ -85,7 +86,7 @@ class _RegistrationDoctorState extends State<RegistrationDoctor> {
                         ]),
                     TextFormField(
                       decoration: const InputDecoration(
-                        icon: const Icon(Icons.location_on),
+                        icon:  Icon(Icons.location_on),
                         hintText: 'Enter your Address',
                         labelText: 'Address',
                       ),
@@ -111,7 +112,7 @@ class _RegistrationDoctorState extends State<RegistrationDoctor> {
                     TextFormField(
                       controller: _pass,
                       decoration: const InputDecoration(
-                        icon: const Icon(Icons.add_circle_outline),
+                        icon: Icon(Icons.add_circle_outline),
                         hintText: 'Enter password',
                         labelText: 'Password',
                       ),
@@ -126,7 +127,7 @@ class _RegistrationDoctorState extends State<RegistrationDoctor> {
                         return null;
                       },
                       decoration: const InputDecoration(
-                        icon: const Icon(Icons.add_circle_outline),
+                        icon: Icon(Icons.add_circle_outline),
                         hintText: 'Confirm password',
                         labelText: 'Confirm password',
                       ),
@@ -192,8 +193,9 @@ void bookFlight(BuildContext context) {
 String? validDOB(String value) {
   Pattern pattern = r'^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/([12][0-9]{3})$';
   RegExp regex =  RegExp(pattern.toString());
-  if (!regex.hasMatch(value))
+  if (!regex.hasMatch(value)) {
     return 'Enter DOB in format DD/MM/YYYY';
-  else
+  } else {
     return null;
+  }
 }
