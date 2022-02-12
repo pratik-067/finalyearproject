@@ -9,20 +9,30 @@ class PatientProfile extends StatelessWidget{
         appBar: AppBar(title: const Text('Patient')),
         backgroundColor: Colors.grey,
         body: Column(
+
           children: [
             Row(
+
               children: [
                 Container(
+                    width: 180,
+                    height: 180,
+                    padding: const EdgeInsets.all(20.0),
+                    child: Card(
+                      shape: RoundedRectangleBorder(
                   width: 200,
                   height: 200,
                    padding: const EdgeInsets.all(20.0),
                   child: Card(
                   shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(15.0),
-                        ),
-                    child: const Center(child: Text('History')),
-                  )),
+                      ),
+                      child: const Center(child: Text('History')),
+                    )),
                 Container(
+                    width: 180,
+                    height: 180,
+                    padding: EdgeInsets.all(20.0),
                     width: 200,
                     height: 200,
                     padding: const EdgeInsets.all(20.0),
@@ -36,23 +46,23 @@ class PatientProfile extends StatelessWidget{
                     ),onTap:(){
                       Navigator.push(context,MaterialPageRoute(builder: (context) => UploadDocument()));
                     } ,)),
-            ],
+              ],
             ),
             Row(
               children: [
                 Container(
-                  width: 200,
-                  height: 200,
-                   padding: const EdgeInsets.all(20.0),
-                  child: Card(
-                  shape: RoundedRectangleBorder(
-                       borderRadius: BorderRadius.circular(15.0),
+                    width: 180,
+                    height: 180,
+                    padding: const EdgeInsets.all(20.0),
+                    child: Card(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15.0),
                       ),
-                    child: const Center(child: Text('Prescription')),
-                  )),
+                      child: const Center(child: Text('Prescription')),
+                    )),
                 Container(
-                    width: 200,
-                    height: 200,
+                    width: 180,
+                    height: 180,
                     padding: EdgeInsets.all(20.0),
                     child: Card(
                       shape: RoundedRectangleBorder(
@@ -60,7 +70,7 @@ class PatientProfile extends StatelessWidget{
                       ),
                       child: const  Center(child:Text('Profile')),
                     )),
-            ],
+              ],
             )
           ],
 

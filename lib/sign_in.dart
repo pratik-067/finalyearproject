@@ -1,6 +1,7 @@
 import 'package:finalyearproject/registration.dart';
 import 'package:flutter/material.dart';
 import 'package:finalyearproject/profiles/patient/patient_profile.dart';
+import 'package:finalyearproject/logintest.dart';
 
 
 class SignIN extends StatefulWidget {
@@ -26,32 +27,32 @@ class _SignINState extends State<SignIN> {
         child: Column(
           children: <Widget>[
             const SizedBox(height: 10),
-        Row(
-        children:[
-          const Text("      User Type  "),
-          DropdownButton(
+            Row(
+                children:[
+                  const Text("      User Type  "),
+                  DropdownButton(
 
-            // Initial Value
-            value: dropdownvalue,
+                    // Initial Value
+                    value: dropdownvalue,
 
-            // Down Arrow Icon
-            icon: const Icon(Icons.keyboard_arrow_down),
+                    // Down Arrow Icon
+                    icon: const Icon(Icons.keyboard_arrow_down),
 
-            // Array list of items
-            items: items.map((String items) {
-              return DropdownMenuItem(
-                value: items,
-                child: Text(items),
-              );
-            }).toList(),
-            // After selecting the desired option,it will
-            // change button value to selected value
-            onChanged: (String? newValue) {
-              setState(() {
-                dropdownvalue = newValue!;
-              });
-            },
-          ),]),
+                    // Array list of items
+                    items: items.map((String items) {
+                      return DropdownMenuItem(
+                        value: items,
+                        child: Text(items),
+                      );
+                    }).toList(),
+                    // After selecting the desired option,it will
+                    // change button value to selected value
+                    onChanged: (String? newValue) {
+                      setState(() {
+                        dropdownvalue = newValue!;
+                      });
+                    },
+                  ),]),
             const SizedBox(height: 20),
             const Padding(
               //padding: const EdgeInsets.only(left:15.0,right: 15.0,top:0,bottom: 0),
@@ -93,7 +94,7 @@ class _SignINState extends State<SignIN> {
               child: FlatButton(
                 onPressed: () {
                   Navigator.push( context,
-                    MaterialPageRoute(builder: (context) =>PatientProfile()),
+                    MaterialPageRoute(builder: (context) =>loginTest()),
                   );
 
                 },
@@ -108,8 +109,8 @@ class _SignINState extends State<SignIN> {
             ),
             TextButton(onPressed:(){
               Navigator.push( context,
-              MaterialPageRoute(builder: (context) => Registration()),
-            );}, child: const Text('New User? Create Account')),
+                MaterialPageRoute(builder: (context) => Registration()),
+              );}, child: const Text('New User? Create Account')),
 
           ],
         ),
